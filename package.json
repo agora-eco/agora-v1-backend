@@ -1,0 +1,41 @@
+{
+	"name": "listing",
+	"version": "1.0.0",
+	"description": "",
+	"main": "src/index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node --experimental-specifier-resolution=node src/index.js",
+		"dev": "nodemon -L --experimental-specifier-resolution=node src/index.js",
+		"postinstall": "link-module-alias",
+		"preinstall": "command -v link-module-alias && link-module-alias clean || true"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.24.0",
+		"body-parser": "^1.19.1",
+		"cookie-parser": "^1.4.6",
+		"cors": "^2.8.5",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.2",
+		"mongoose": "^6.1.4"
+	},
+	"devDependencies": {
+		"chalk": "^5.0.0",
+		"link-module-alias": "^1.2.0",
+		"nodemon": "^2.0.15"
+	},
+	"engines": {
+		"node": "16.x"
+	},
+	"_moduleAliases": {
+		"src": "src",
+		"controllers": "src/controllers",
+		"database": "src/database",
+		"middlewares": "src/middlewares",
+		"utils": "src/utils"
+	}
+}
