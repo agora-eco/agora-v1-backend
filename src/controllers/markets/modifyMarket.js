@@ -18,7 +18,7 @@ marketObj: {
 } */
 
 const modifyMarket = async (id, marketObj) => {
-	const market = await MarketModel.findByIdAndUpdate(id, marketObj);
+	const market = await MarketModel.findById(id, marketObj).exec();
 
 	return market;
 };

@@ -13,7 +13,7 @@ productObj: {
 } */
 
 const modifyProduct = async (id, productObj) => {
-	const product = await ProductModel.findByIdAndUpdate(id, productObj);
+	const product = await ProductModel.findByIdAndUpdate(id, productObj).exec();
 
 	return product;
 };
