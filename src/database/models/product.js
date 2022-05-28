@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
 	name: String,
-	symbol: String,
+	code: String,
 	owner: String,
 	market: mongoose.Types.ObjectId,
 	marketAddress: String,
 	description: String,
 	price: String,
-	thumbnail: mongoose.Types.ObjectId,
+	thumbnail: String,
 });
 
 const ProductModel = mongoose.model("Product", ProductSchema);

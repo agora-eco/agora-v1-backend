@@ -1,7 +1,7 @@
 import { Router } from "express";
 
 import { getMarket, createMarket, modifyMarket } from "controllers/markets";
-import { getProduct } from "controllers/products";
+import { getProduct, createProduct, modifyProduct } from "controllers/products";
 
 const router = Router();
 
@@ -74,7 +74,7 @@ router.get("/:address/catalog/:code", async (req, res) => {
 	}
 });
 
-router.get("/:address/catalog/", async (req, res) => {
+router.post("/:address/catalog/", async (req, res) => {
 	try {
 		const { address } = req.params;
 		if (!address || !req.body.product) {
@@ -84,6 +84,7 @@ router.get("/:address/catalog/", async (req, res) => {
 
 		return res.status(200).send({ product });
 	} catch (err) {
+		console.log(err);
 		return res.status(400).send({ err });
 	}
 });
